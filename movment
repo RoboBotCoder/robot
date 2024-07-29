@@ -1,0 +1,27 @@
+from bluedot import bluedot
+from signal import pause
+from gpiozero import Robot
+
+bd = BlueDot(cols=3, rows=1)
+bd[1,0].visible = False
+robot = Robot(left=(17, 18), right=(22, 23))
+
+def dpad1(pos):
+    if pos.top:
+        robot.forward()r
+    if pos.bottom:
+        robot.backward()
+
+def dpad2(pos):
+    if pos.left:
+        robot.left()
+    if pos.right:
+        robot.right()
+
+bd[0,0].when_pressed = dpad1
+bd[3,0].when_pressed = dpad2
+
+
+pause()
+
+
