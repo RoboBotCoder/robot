@@ -20,6 +20,7 @@ def dpad2(pos):
 
 bd[0,0].when_pressed = dpad1
 bd[3,0].when_pressed = dpad2
+bd.when_realesed= robot.stop
 
 
 pause()
